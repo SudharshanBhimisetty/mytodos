@@ -146,8 +146,8 @@ return;
 $("ul").on("click","span",function(event){
     $testing = $(this).parent().text();
     console.log($testing);
-
-    window.location.href= "delete.php?var=" + $testing;
+    console.log(encodeURIComponent($testing));
+    window.location.href= "delete.php?var=" + encodeURIComponent($testing);
     $(this).parent().fadeOut(500,function(){
         $(this).remove();
     });
