@@ -104,10 +104,10 @@ return;
 
 
     require_once("connection.php");
-    
+    $email = $_SESSION["email"];
     $name = $_SESSION["name"];
     
-        $r = "SELECT users.username,todos.text FROM users JOIN todos ON users.user_id = todos.user_id WHERE username = '$name'";
+        $r = "SELECT users.username,todos.text FROM users JOIN todos ON users.user_id = todos.user_id WHERE email = '$email'";
     
         $resultt = mysqli_query($con,$r);
     
